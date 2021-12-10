@@ -1,5 +1,20 @@
-const dropZone = document.querySelector(".drop-zone")
+const dropZone = document.querySelector(".drop-zone");
 
-dropZone.addEventListener("dragover", (e)=> {
-    console.log("dragging");
-})
+dropZone.addEventListener("dragover", (e) => {
+    e.preventDefault();
+
+  if (!dropZone.classList.contains("dragged")) {
+    dropZone.classList.add("dragged");
+  }
+});
+
+
+dropZone.addEventListener("dragleave", ()=> {
+    dropZone.classList.remove("dragged");
+});
+
+dropZone.addEventListener("drop", ()=> {
+    e.preventDefault();
+    dropZone.classList.remove("dragged");
+});
+
