@@ -29,7 +29,13 @@ body, .drop-zone {
     min-height: 200px;
     border: 2px solid var(--border-color);
     margin: 30px;
-    border-radius: 10px;;
+    border-radius: 10px;
+    transition: all .2s ease;
+}
+
+.dragged.drop-zone {
+    background: var(--main-bg-color);
+    border-color: #e47526;
 }
 
 .icon-container {
@@ -42,7 +48,7 @@ body, .drop-zone {
     width: 75px;
     position: absolute;
     transform-origin: bottom;
-    transition: transform .300ms ease-in-out;
+    transition: transform 300ms ease-in-out;
 }
 
 .icon-container .center {
@@ -55,12 +61,12 @@ body, .drop-zone {
 }
 
 .dragged .icon-container .right {
-    transform: rotate(15deg) translateX(20px) scale(.9);
+    transform: rotate(12deg) translateX(21px) scale(.9);
 
 }
 
 .dragged .icon-container .left {
-    transform: rotate(-15deg) translateX(-20px) scale(.9);
+    transform: rotate(-12deg) translateX(-21px) scale(.9);
    
 }
 
