@@ -4,7 +4,7 @@
 }
 
 body, html {
-    font-family: syste-ui;
+    font-family: system-ui;
     background: var(--main-bg-color);
     height: 100%;
     padding: 0;
@@ -41,9 +41,29 @@ body, .drop-zone {
 .icon-container img{
     width: 75px;
     position: absolute;
-
+    transform-origin: bottom;
+    transition: transform .300ms ease-in-out;
 }
 
 .icon-container .center {
     z-index: 2;
+}
+
+.icon-container .right, .icon-container .left {
+    filter: grayscale(.4);
+    transform: scale(.9);
+}
+
+.dragged .icon-container .right {
+    transform: rotate(15deg) translateX(20px) scale(.9);
+
+}
+
+.dragged .icon-container .left {
+    transform: rotate(-15deg) translateX(-20px) scale(.9);
+   
+}
+
+.dragged .icon-container .center {
+    transform: translateY(-5px);
 }
